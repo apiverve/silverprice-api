@@ -1,33 +1,36 @@
 openapi: 3.0.4
 info:
   title: Silver Price
-  description: Silver Price is a simple tool for getting the current price of silver. It returns the current price of silver in any currency and in various units.
+  description: >-
+    Silver Price is a simple tool for getting the current price of silver. It
+    returns the current price of silver in any currency and in various units.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/silverprice:
     get:
       summary: Get Current Silver Price
-      description: Silver Price is a simple tool for getting the current price of silver. It returns the current price of silver in any currency and in various units.
+      description: >-
+        Get the current price of silver. You can optionally specify a currency
+        (defaults to USD).
       operationId: silverprice
       parameters:
-      - name: currency
-        default: USD
-        in: query
-        schema:
-          type: string
-        required: false
-        description: The currency to get the price in (USD, EUR, GBP, etc.)
-        example: USD
+        - name: currency
+          in: query
+          schema:
+            type: string
+          required: false
+          description: The currency to get the price in
+          example: USD
       responses:
         '200':
           description: Successful Response
@@ -43,23 +46,23 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   currency: USD
-                  gram: 1.17
-                  kilogram: 1173.57
-                  ounce: 33.27
-                  lastUpdated: 1740074714
+                  gram: 1.74
+                  kilogram: 1737.95
+                  ounce: 49.27
+                  lastUpdated: '2026-02-07T12:00:00.000Z'
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -67,4 +70,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
