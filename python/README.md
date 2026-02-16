@@ -220,8 +220,9 @@ from apiverve_silverprice.apiClient import SilverpriceAPIClient
 
 api = SilverpriceAPIClient("[YOUR_API_KEY]")
 
+query = { "currency": "USD" }
+
 try:
-    query = { "currency": "USD" }
     result = api.execute(query)
     print(result)
 finally:
