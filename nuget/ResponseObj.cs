@@ -25,6 +25,9 @@ namespace APIVerve.API.SilverPrice
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -33,15 +36,57 @@ namespace APIVerve.API.SilverPrice
         public string Currency { get; set; }
 
         [JsonProperty("gram")]
-        public double Gram { get; set; }
+        public double? Gram { get; set; }
 
         [JsonProperty("kilogram")]
-        public double Kilogram { get; set; }
+        public double? Kilogram { get; set; }
 
         [JsonProperty("ounce")]
-        public double Ounce { get; set; }
+        public double? Ounce { get; set; }
 
         [JsonProperty("lastUpdated")]
-        public long LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get; set; }
+
+        [JsonProperty("change24h")]
+        public double? Change24H { get; set; }
+
+        [JsonProperty("change24hPct")]
+        public double? Change24HPct { get; set; }
+
+        [JsonProperty("changeDirection")]
+        public string ChangeDirection { get; set; }
+
+        [JsonProperty("high24h")]
+        public double? High24H { get; set; }
+
+        [JsonProperty("low24h")]
+        public double? Low24H { get; set; }
+
+        [JsonProperty("formatted")]
+        public Formatted Formatted { get; set; }
+    }
+
+    public partial class Formatted
+    {
+        [JsonProperty("ounce")]
+        public string Ounce { get; set; }
+
+        [JsonProperty("gram")]
+        public string Gram { get; set; }
+
+        [JsonProperty("kilogram")]
+        public string Kilogram { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
