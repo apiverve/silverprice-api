@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.SilverPrice;
 
 class Program
 {
@@ -60,8 +60,9 @@ class Program
         // Initialize the API client
         var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    currency = "USD"
+        var queryOptions = new SilverPriceQueryOptions {
+    Currency = "USD",
+    Hourly = true
 };
 
         // Make the API call
@@ -116,7 +117,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.SilverPrice;
 
 public class Example
 {
@@ -124,8 +125,9 @@ public class Example
     {
         var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    currency = "USD"
+        var queryOptions = new SilverPriceQueryOptions {
+    Currency = "USD",
+    Hourly = true
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -148,7 +150,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.SilverPrice;
 
 public class Example
 {
@@ -156,8 +158,9 @@ public class Example
     {
         var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    currency = "USD"
+        var queryOptions = new SilverPriceQueryOptions {
+    Currency = "USD",
+    Hourly = true
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -185,7 +188,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.SilverPrice;
 
 public class Example
 {
@@ -193,8 +196,9 @@ public class Example
     {
         var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    currency = "USD"
+        var queryOptions = new SilverPriceQueryOptions {
+    Currency = "USD",
+    Hourly = true
 };
 
         try
@@ -237,7 +241,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.SilverPrice;
 
 public class Example
 {
@@ -249,8 +253,9 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    currency = "USD"
+        var queryOptions = new SilverPriceQueryOptions {
+    Currency = "USD",
+    Hourly = true
 };
 
         try
@@ -290,8 +295,9 @@ var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    currency = "USD"
+var queryOptions = new SilverPriceQueryOptions {
+    Currency = "USD",
+    Hourly = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,8 +322,9 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    currency = "USD"
+var queryOptions = new SilverPriceQueryOptions {
+    Currency = "USD",
+    Hourly = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,8 +341,9 @@ var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    currency = "USD"
+var queryOptions = new SilverPriceQueryOptions {
+    Currency = "USD",
+    Hourly = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,8 +354,9 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    currency = "USD"
+var queryOptions = new SilverPriceQueryOptions {
+    Currency = "USD",
+    Hourly = true
 };
 
 using (var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]"))
@@ -368,10 +377,20 @@ using (var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]"))
   "error": null,
   "data": {
     "currency": "USD",
-    "gram": 1.17,
-    "kilogram": 1173.57,
-    "ounce": 33.27,
-    "lastUpdated": 1740074714
+    "gram": 1.74,
+    "kilogram": 1737.95,
+    "ounce": 49.27,
+    "lastUpdated": "2026-02-07T12:00:00.000Z",
+    "change24h": 0.42,
+    "change24hPct": 0.86,
+    "changeDirection": "up",
+    "high24h": 49.55,
+    "low24h": 48.8,
+    "formatted": {
+      "ounce": "$49.27",
+      "gram": "$1.74",
+      "kilogram": "$1,737.95"
+    }
   }
 }
 ```
