@@ -15,5 +15,11 @@ namespace APIVerve.API.SilverPrice
         /// </summary>
         [JsonProperty("currency")]
         public string Currency { get; set; }
+
+        /// <summary>
+        /// Include hourly price data for the past 24 hours
+        /// </summary>
+        [JsonProperty("hourly")]
+        public bool? Hourly { get; set; }
     }
 }
