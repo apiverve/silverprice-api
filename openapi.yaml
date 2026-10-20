@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: Silver Price
   description: >-
-    Silver Price is a simple tool for getting the current price of silver. It
-    returns the current price of silver in any currency and in various units.
+    Silver Price quotes spot silver prices per troy ounce, gram, and kilogram in
+    US dollars, including 24-hour price change and trend direction. Paid plans
+    can request quotes across 172 currencies, 24-hour high and low ranges, and
+    hourly price snapshots.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/silverprice:
     get:
-      summary: Get Current Silver Price
+      summary: Silver Price
       description: >-
         Get the current price of silver. You can optionally specify a currency
         (defaults to USD).
@@ -60,8 +62,8 @@ paths:
                 error: null
                 data:
                   currency: USD
-                  gram: 1.74
-                  kilogram: 1737.95
+                  gram: 1.58
+                  kilogram: 1584.07
                   ounce: 49.27
                   lastUpdated: '2026-02-07T12:00:00.000Z'
                   change24h: 0.42
@@ -71,8 +73,10 @@ paths:
                   low24h: 48.8
                   formatted:
                     ounce: $49.27
-                    gram: $1.74
-                    kilogram: $1,737.95
+                    gram: $1.58
+                    kilogram: $1,584.07
+                    ounceWords: forty-nine dollars
+                    kilogramWords: one thousand, five hundred eighty-four dollars
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':

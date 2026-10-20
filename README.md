@@ -1,13 +1,13 @@
-# [Silver Price API](https://silverprice.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Silver Price API](https://apiverve.com/marketplace/silverprice?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Silver Price is a simple tool for getting the current price of silver. It returns the current price of silver in any currency and in various units.
+Silver Price quotes spot silver prices per troy ounce, gram, and kilogram in US dollars, including 24-hour price change and trend direction. Paid plans can request quotes across 172 currencies, 24-hour high and low ranges, and hourly price snapshots.
 
 The Silver Price API provides a simple, reliable way to integrate silver price functionality into your applications. Built for developers who need production-ready silver price capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://silverprice.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/silverprice?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://silverprice.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/silverprice?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -157,7 +157,7 @@ go get github.com/apiverve/silverprice-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Silver Price API](https://silverprice.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Silver Price API](https://apiverve.com/marketplace/silverprice?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/silverprice](https://docs.apiverve.com/ref/silverprice)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -187,11 +187,44 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Silver Price API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "currency": "USD",
+    "gram": 1.58,
+    "kilogram": 1584.07,
+    "ounce": 49.27,
+    "lastUpdated": "2026-02-07T12:00:00.000Z",
+    "change24h": 0.42,
+    "change24hPct": 0.86,
+    "changeDirection": "up",
+    "high24h": 49.55,
+    "low24h": 48.8,
+    "formatted": {
+      "ounce": "$49.27",
+      "gram": "$1.58",
+      "kilogram": "$1,584.07",
+      "ounceWords": "forty-nine dollars",
+      "kilogramWords": "one thousand, five hundred eighty-four dollars"
+    }
+  }
 }
 ```
 
@@ -199,7 +232,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Silver Price API](https://silverprice.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Silver Price API](https://apiverve.com/marketplace/silverprice?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
