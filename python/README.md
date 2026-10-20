@@ -1,13 +1,12 @@
 Silver Price API
 ============
 
-Silver Price is a simple tool for getting the current price of silver. It returns the current price of silver in any currency and in various units.
+Silver Price quotes spot silver prices per troy ounce, gram, and kilogram in US dollars, including 24-hour price change and trend direction. Paid plans can request quotes across 172 currencies, 24-hour high and low ranges, and hourly price snapshots.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Silver Price API](https://silverprice.apiverve.com?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-silverprice.svg)](https://pypi.org/project/apiverve-silverprice/)
+
+This is a Python wrapper for the [Silver Price API](https://apiverve.com/marketplace/silverprice?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-silverprice
 
 ## Configuration
 
-Before using the silverprice API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Silver Price API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -44,7 +43,10 @@ from apiverve_silverprice.apiClient import SilverpriceAPIClient
 # Initialize the client with your APIVerve API key
 api = SilverpriceAPIClient("[YOUR_API_KEY]")
 
-query = { "currency": "USD" }
+query = {
+    "currency": "USD",
+    "hourly": true
+}
 
 try:
     # Make the API call
@@ -60,7 +62,7 @@ except Exception as e:
 
 ## Usage
 
-The Silver Price API documentation is found here: [https://docs.apiverve.com/ref/silverprice](https://docs.apiverve.com/ref/silverprice?utm_source=pypi&utm_medium=readme).
+The Silver Price API documentation is found here: [https://docs.apiverve.com/ref/silverprice](https://docs.apiverve.com/ref/silverprice?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -82,7 +84,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "currency": "USD" }
+query = {
+    "currency": "USD",
+    "hourly": true
+}
 ```
 
 ###### Simple Request
@@ -103,10 +108,22 @@ print(result)
   "error": null,
   "data": {
     "currency": "USD",
-    "gram": 1.17,
-    "kilogram": 1173.57,
-    "ounce": 33.27,
-    "lastUpdated": 1740074714
+    "gram": 1.58,
+    "kilogram": 1584.07,
+    "ounce": 49.27,
+    "lastUpdated": "2026-02-07T12:00:00.000Z",
+    "change24h": 0.42,
+    "change24hPct": 0.86,
+    "changeDirection": "up",
+    "high24h": 49.55,
+    "low24h": 48.8,
+    "formatted": {
+      "ounce": "$49.27",
+      "gram": "$1.58",
+      "kilogram": "$1,584.07",
+      "ounceWords": "forty-nine dollars",
+      "kilogramWords": "one thousand, five hundred eighty-four dollars"
+    }
   }
 }
 ```
@@ -124,7 +141,10 @@ from apiverve_silverprice.apiClient import SilverpriceAPIClient, SilverpriceAPIC
 
 api = SilverpriceAPIClient("[YOUR_API_KEY]")
 
-query = { "currency": "USD" }
+query = {
+    "currency": "USD",
+    "hourly": true
+}
 
 try:
     result = api.execute(query)
@@ -145,7 +165,10 @@ from apiverve_silverprice.apiClient import SilverpriceAPIClient, SilverpriceAPIC
 
 api = SilverpriceAPIClient("[YOUR_API_KEY]")
 
-query = { "currency": "USD" }
+query = {
+    "currency": "USD",
+    "hourly": true
+}
 
 try:
     result = api.execute(query)
@@ -179,7 +202,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_silverprice.apiClient import SilverpriceAPIClient, SilverpriceAPIClientError
 
-query = { "currency": "USD" }
+query = {
+    "currency": "USD",
+    "hourly": true
+}
 
 # Using context manager ensures proper cleanup
 with SilverpriceAPIClient("[YOUR_API_KEY]") as api:
@@ -205,7 +231,10 @@ from apiverve_silverprice.apiClient import SilverpriceAPIClient
 # Enable debug mode
 api = SilverpriceAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "currency": "USD" }
+query = {
+    "currency": "USD",
+    "hourly": true
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -220,7 +249,10 @@ from apiverve_silverprice.apiClient import SilverpriceAPIClient
 
 api = SilverpriceAPIClient("[YOUR_API_KEY]")
 
-query = { "currency": "USD" }
+query = {
+    "currency": "USD",
+    "hourly": true
+}
 
 try:
     result = api.execute(query)
@@ -234,7 +266,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -245,12 +277,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

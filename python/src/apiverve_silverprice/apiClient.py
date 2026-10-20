@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,7 +24,8 @@ class ValidationError(SilverpriceAPIClientError):
 class SilverpriceAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "currency": {"type": "string", "required": False, "default": "USD"}
+        "currency": {"type": "string", "required": False, "default": "USD"},
+        "hourly": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns
