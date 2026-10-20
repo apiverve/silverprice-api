@@ -1,13 +1,12 @@
-SilverPrice API
+Silver Price API
 ============
 
-Silver Price is a simple tool for getting the current price of silver. It returns the current price of silver in any currency and in various units.
+Silver Price quotes spot silver prices per troy ounce, gram, and kilogram in US dollars, including 24-hour price change and trend direction. Paid plans can request quotes across 172 currencies, 24-hour high and low ranges, and hourly price snapshots.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [SilverPrice API](https://silverprice.apiverve.com?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.SilverPrice.svg)](https://www.nuget.org/packages/APIVerve.API.SilverPrice)
+
+This is a .NET wrapper for the [Silver Price API](https://apiverve.com/marketplace/silverprice?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the silverprice API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Silver Price API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,9 +60,9 @@ class Program
         var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new SilverPriceQueryOptions {
-    Currency = "USD",
-    Hourly = true
-};
+            Currency = "USD",
+            Hourly = true
+        };
 
         // Make the API call
         try
@@ -93,13 +92,13 @@ class Program
 
 ## Usage
 
-The SilverPrice API documentation is found here: [https://docs.apiverve.com/ref/silverprice](https://docs.apiverve.com/ref/silverprice?utm_source=nuget&utm_medium=readme).
+The Silver Price API documentation is found here: [https://docs.apiverve.com/ref/silverprice](https://docs.apiverve.com/ref/silverprice?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-SilverPrice API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Silver Price API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -126,9 +125,9 @@ public class Example
         var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new SilverPriceQueryOptions {
-    Currency = "USD",
-    Hourly = true
-};
+            Currency = "USD",
+            Hourly = true
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -159,9 +158,9 @@ public class Example
         var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new SilverPriceQueryOptions {
-    Currency = "USD",
-    Hourly = true
-};
+            Currency = "USD",
+            Hourly = true
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -197,9 +196,9 @@ public class Example
         var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new SilverPriceQueryOptions {
-    Currency = "USD",
-    Hourly = true
-};
+            Currency = "USD",
+            Hourly = true
+        };
 
         try
         {
@@ -254,9 +253,9 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new SilverPriceQueryOptions {
-    Currency = "USD",
-    Hourly = true
-};
+            Currency = "USD",
+            Hourly = true
+        };
 
         try
         {
@@ -377,8 +376,8 @@ using (var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]"))
   "error": null,
   "data": {
     "currency": "USD",
-    "gram": 1.74,
-    "kilogram": 1737.95,
+    "gram": 1.58,
+    "kilogram": 1584.07,
     "ounce": 49.27,
     "lastUpdated": "2026-02-07T12:00:00.000Z",
     "change24h": 0.42,
@@ -388,8 +387,10 @@ using (var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]"))
     "low24h": 48.8,
     "formatted": {
       "ounce": "$49.27",
-      "gram": "$1.74",
-      "kilogram": "$1,737.95"
+      "gram": "$1.58",
+      "kilogram": "$1,584.07",
+      "ounceWords": "forty-nine dollars",
+      "kilogramWords": "one thousand, five hundred eighty-four dollars"
     }
   }
 }
@@ -399,7 +400,7 @@ using (var apiClient = new SilverPriceAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -410,12 +411,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

@@ -76,6 +76,12 @@ namespace APIVerve.API.SilverPrice
 
         [JsonProperty("kilogram")]
         public string Kilogram { get; set; }
+
+        [JsonProperty("ounceWords")]
+        public string OunceWords { get; set; }
+
+        [JsonProperty("kilogramWords")]
+        public string KilogramWords { get; set; }
     }
 
     public partial class Premium
