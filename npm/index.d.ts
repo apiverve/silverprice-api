@@ -39,9 +39,11 @@ declare module '@apiverve/silverprice' {
   }
   
   interface Formatted {
-      ounce:    null | string;
-      gram:     null | string;
-      kilogram: null | string;
+      ounce:         null | string;
+      gram:          null | string;
+      kilogram:      null | string;
+      ounceWords:    null | string;
+      kilogramWords: null | string;
   }
 
   export default class silverpriceWrapper {

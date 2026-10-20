@@ -1,13 +1,10 @@
 # Silver Price API
 
-Silver Price is a simple tool for getting the current price of silver. It returns the current price of silver in any currency and in various units.
+Silver Price quotes spot silver prices per troy ounce, gram, and kilogram in US dollars, including 24-hour price change and trend direction. Paid plans can request quotes across 172 currencies, 24-hour high and low ranges, and hourly price snapshots.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/silverprice.svg)](https://www.npmjs.com/package/@apiverve/silverprice)
 
-This is a Javascript Wrapper for the [Silver Price API](https://silverprice.apiverve.com?utm_source=npm&utm_medium=readme)
+This is a JavaScript wrapper for the [Silver Price API](https://apiverve.com/marketplace/silverprice?utm_source=npm&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -28,15 +25,15 @@ yarn add @apiverve/silverprice
 ## Configuration
 
 Before using the Silver Price API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=readme)
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=referral&utm_content=readme)
 
 ---
 
 ## Quick Start
 
-[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=readme)
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=referral&utm_content=readme)
 
-The Silver Price API documentation is found here: [https://docs.apiverve.com/ref/silverprice](https://docs.apiverve.com/ref/silverprice?utm_source=npm&utm_medium=readme).
+The Silver Price API documentation is found here: [https://docs.apiverve.com/ref/silverprice](https://docs.apiverve.com/ref/silverprice?utm_source=npm&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -126,8 +123,8 @@ async function makeRequest() {
   "error": null,
   "data": {
     "currency": "USD",
-    "gram": 1.74,
-    "kilogram": 1737.95,
+    "gram": 1.58,
+    "kilogram": 1584.07,
     "ounce": 49.27,
     "lastUpdated": "2026-02-07T12:00:00.000Z",
     "change24h": 0.42,
@@ -137,8 +134,10 @@ async function makeRequest() {
     "low24h": 48.8,
     "formatted": {
       "ounce": "$49.27",
-      "gram": "$1.74",
-      "kilogram": "$1,737.95"
+      "gram": "$1.58",
+      "kilogram": "$1,584.07",
+      "ounceWords": "forty-nine dollars",
+      "kilogramWords": "one thousand, five hundred eighty-four dollars"
     }
   }
 }
@@ -148,7 +147,7 @@ async function makeRequest() {
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=npm&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=npm&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -160,12 +159,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=npm&utm_medium=readme), [Privacy Policy](https://apiverve.com/privacy?utm_source=npm&utm_medium=readme), and [Refund Policy](https://apiverve.com/refund?utm_source=npm&utm_medium=readme).
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=npm&utm_medium=referral&utm_content=readme) and [Privacy Policy](https://apiverve.com/privacy?utm_source=npm&utm_medium=referral&utm_content=readme).
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
