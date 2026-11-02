@@ -15,7 +15,7 @@ use APIVerve\Silverprice\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['currency' => 'USD', 'hourly' => true]);
+ * $response = $client->execute(['currency' => 'USD', 'hourly' => true, 'daily' => true]);
  * print_r($response);
  * ```
  *
@@ -35,7 +35,8 @@ class Client
      */
     private const VALIDATION_RULES = [
         'currency' => ['type' => 'string', 'required' => false],
-        'hourly' => ['type' => 'boolean', 'required' => false]
+        'hourly' => ['type' => 'boolean', 'required' => false],
+        'daily' => ['type' => 'boolean', 'required' => false]
     ];
 
     /**
