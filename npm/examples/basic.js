@@ -16,7 +16,8 @@ const api = new silverpriceAPI({
 // Example query
 var query = {
   currency: "USD",
-  hourly: false
+  hourly: false,
+  daily: false
 };
 
 // Make the API request using callback
