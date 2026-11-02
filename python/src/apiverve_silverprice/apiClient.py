@@ -25,7 +25,8 @@ class SilverpriceAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "currency": {"type": "string", "required": False, "default": "USD"},
-        "hourly": {"type": "boolean", "required": False, "default": False}
+        "hourly": {"type": "boolean", "required": False, "default": False},
+        "daily": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns
