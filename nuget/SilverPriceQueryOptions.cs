@@ -21,5 +21,11 @@ namespace APIVerve.API.SilverPrice
         /// </summary>
         [JsonProperty("hourly")]
         public bool? Hourly { get; set; }
+
+        /// <summary>
+        /// Include the daily closing price per ounce for the last 30 days
+        /// </summary>
+        [JsonProperty("daily")]
+        public bool? Daily { get; set; }
     }
 }
