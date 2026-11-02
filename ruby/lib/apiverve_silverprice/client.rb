@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Silverprice::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ currency: "USD", hourly: true })
+    #   response = client.execute({ currency: "USD", hourly: true, daily: true })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/silverprice?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'currency' => { type: 'string', required: false }, 'hourly' => { type: 'boolean', required: false } }
+      VALIDATION_RULES = { 'currency' => { type: 'string', required: false }, 'hourly' => { type: 'boolean', required: false }, 'daily' => { type: 'boolean', required: false } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
