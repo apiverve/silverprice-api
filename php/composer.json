@@ -1,7 +1,7 @@
 {
     "name": "apiverve/silverprice",
     "description": "Silver Price quotes spot silver prices per troy ounce, gram, and kilogram in US dollars, including 24-hour price change and trend direction. Paid plans add 172 currencies, 24-hour highs and lows, 7- and 30-day changes, 30-day stats, and hourly and 30-day daily history.",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "type": "library",
     "license": "MIT",
     "authors": [
