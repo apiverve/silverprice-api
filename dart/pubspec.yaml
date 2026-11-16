@@ -1,0 +1,16 @@
+name: apiverve_silverprice
+description: "Silver Price quotes spot silver prices per troy ounce, gram, and kilogram in US dollars, including 24-hour price change and trend direction. Paid plans add 172 currencies, 24-hour highs and lows, 7- and 30-day changes, 30-day stats, and hourly and 30-day daily history."
+version: 1.2.6
+homepage: https://apiverve.com/marketplace/silverprice?utm_source=dart&utm_medium=referral&utm_content=homepage
+repository: https://github.com/apiverve/silverprice-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
